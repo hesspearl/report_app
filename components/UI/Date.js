@@ -16,19 +16,16 @@ const DateComp = (props) => {
     setDate(currentDate);
   };
 
-  const {onChangeText }=props
-
-  useEffect(() => {
-    onChangeText(date)
-
-  
-  }, [date , onChange]);
+const {onChangeText }=props
+useEffect(() => {
+  onChangeText(moment.utc(date).format('DD/MM/YYYY'))
+}, [date])
 
   return (
     <View>
      
       <View
-      style={{alignItems:"center"}}>
+      style={{alignItems:"center", marginVertical:10}}>
       <Text
      onPress={() => setShow(true)}
      style={{fontSize:24}}> {moment.utc(date).format('DD/MM/YYYY')}</Text>

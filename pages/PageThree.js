@@ -1,13 +1,12 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native';
 import Input from "../components/UI/InputPages"
-import DateComp from "../components/UI/Date"
+import Drop from "../components/UI/dropDown"
 
 const PageThree= props =>{
 return (
-
-    <DateComp/>
-
+<View/>
+    
 )
 }
 

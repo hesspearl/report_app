@@ -9,10 +9,10 @@ import {
 } from "react-native";
 import { useDispatch } from "react-redux";
 
-import * as reportActions from '../store/action/report'
-import InputPage from "../components/UI/InputPages"
-import DateCopm from "../components/UI/Date"
-
+import * as reportActions from "../store/action/report";
+import InputPage from "../components/UI/InputPages";
+import DateCopm from "../components/UI/Date";
+import DropDown from "../components/UI/dropDown"
 
 const REPORT_UPDATE = "REPORT_UPDATE";
 
@@ -23,28 +23,27 @@ const PageOneReducer = (state, action) => {
       [action.input]: action.value
     };
 
-    const updatedValidities={
-        ...state.Validities,
-        [action.input]:action.isValid
-    }
-    let formIsValid=true;
+    const updatedValidities = {
+      ...state.Validities,
+      [action.input]: action.isValid
+    };
+    let formIsValid = true;
 
-    for (let key in updatedValidities){
-        formIsValid= formIsValid&& updatedValidities[key]
+    for (let key in updatedValidities) {
+      formIsValid = formIsValid && updatedValidities[key];
     }
 
     return {
-     
       inputValues: updateValues,
-      Validities:updatedValidities,
-      isValid:formIsValid
+      Validities: updatedValidities,
+      isValid: formIsValid
     };
   }
 
   return state;
 };
 
-const Inputs =() => {
+const Inputs = () => {
   const dispatch = useDispatch();
 
   const [stateReport, dispatchReport] = useReducer(PageOneReducer, {
@@ -54,16 +53,16 @@ const Inputs =() => {
       enteredInfoThreeInput: "",
       enteredInfoFourInput: ""
     },
-    Validities:{
-        enteredInfoOneInput: false,
-        enteredInfoTwoInput: false,
-        enteredInfoThreeInput: false,
-        enteredInfoFourInput: false
+    Validities: {
+      enteredInfoOneInput: false,
+      enteredInfoTwoInput: false,
+      enteredInfoThreeInput: false,
+      enteredInfoFourInput: false
     },
     isValid: false
   });
 
-  console.log(stateReport)
+  console.log(stateReport);
 
   const inputTextHolder = (inputIdentifier, enteredText) => {
     let isValid = false;
@@ -72,7 +71,7 @@ const Inputs =() => {
     dispatchReport({
       type: REPORT_UPDATE,
       value: enteredText,
-      isValid: isValid,//true
+      isValid: isValid, //true
       input: inputIdentifier
     });
   };
@@ -94,7 +93,7 @@ const Inputs =() => {
         )
       );
     }
-  }, [dispatch , stateReport]);
+  }, [dispatch, stateReport]);
 
   return (
     <KeyboardAvoidingView
@@ -110,35 +109,31 @@ const Inputs =() => {
               value={stateReport.inputValues.enteredInfoOneInput}
               style={style.textInputDesign}
               returnKeyType="next"
-              
             />
-            {!stateReport.Validities.enteredInfoOneInput }
+            {!stateReport.Validities.enteredInfoOneInput}
 
-       
             <DateCopm
-             onChangeText={inputTextHolder.bind(this, "enteredInfoTwoInput")}
+              onChangeText={enteredText => dispatchReport({
+                  type: REPORT_UPDATE,
+                  value: enteredText,
+                  input: "enteredInfoTwoInput"
+                })
+              }
               //value={stateReport.inputValues.enteredInfoTwoInput}
-             
-             
             />
-        
-        {!stateReport.Validities.enteredInfoTwoInput}
-            <TextInput
-              onChangeText={inputTextHolder.bind(this, "enteredInfoThreeInput")}
-              value={stateReport.inputValues.enteredInfoThreeInput}
-              style={style.textInputDesign}
-              returnKeyType="next"
-            
-            /> 
-            {!stateReport.Validities.enteredInfoThreeInput }
-      
-            <TextInput
-              onChangeText={inputTextHolder.bind(this, "enteredInfoFourInput")}
-              value={stateReport.inputValues.enteredInfoFourInput}
-              style={style.textInputDesign}
-              onEndEditing={submitHandler}
+
+            {!stateReport.Validities.enteredInfoTwoInput}
+            <DropDown
+             onChangeText={enteredText => dispatchReport({
+                  type: REPORT_UPDATE,
+                  value: enteredText,
+                  input: "enteredInfoThreeInput"
+                })
+              }
             />
-             {!stateReport.Validities.enteredInfoFourInput}
+            {!stateReport.Validities.enteredInfoThreeInput}
+
+            {!stateReport.Validities.enteredInfoFourInput}
           </View>
         </View>
       </ScrollView>
@@ -148,19 +143,27 @@ const Inputs =() => {
 
 const style = StyleSheet.create({
   inputContainer: {
-    alignItems: "center",
+    
 
-    justifyContent: "center"
+   
   },
   textInputDesign: {
     width: 200,
-        height: 50,
-        borderWidth: 4,
-        borderColor: "black",
-        marginTop: 7,
-       padding:10,
-       fontSize:15,
+    height: 50,
+    borderWidth: 4,
+    borderColor: "black",
+    marginTop: 7,
+    padding: 10,
+    fontSize: 15
   }
 });
 
 export default Inputs;
+ /*
+ 
+          <TextInput
+              onChangeText={inputTextHolder.bind(this, "enteredInfoFourInput")}
+              value={stateReport.inputValues.enteredInfoFourInput}
+              style={style.textInputDesign}
+              onEndEditing={submitHandler}
+            />*/
