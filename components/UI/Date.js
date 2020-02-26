@@ -1,7 +1,8 @@
 import React, { useState , useEffect} from "react";
-import { View, Text, Button, Platform } from "react-native";
+import { View, Text, StyleSheet, Platform } from "react-native";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import moment from "moment";
+import {FontAwesome} from "@expo/vector-icons"
 
 const DateComp = (props) => {
   const [date, setDate] = useState(new Date());
@@ -25,10 +26,15 @@ useEffect(() => {
     <View>
      
       <View
-      style={{alignItems:"center", marginVertical:10}}>
+      style={styles.container}>
       <Text
      onPress={() => setShow(true)}
-     style={{fontSize:24}}> {moment.utc(date).format('DD/MM/YYYY')}</Text>
+     style={{fontSize:24, paddingRight:10}}> {moment.utc(date).format('DD/MM/YYYY')}</Text>
+     <FontAwesome
+       name="calendar"
+       size={20}
+     />
+     
       </View>
 
       {show && (
@@ -46,4 +52,15 @@ useEffect(() => {
   );
 };
 
+const styles=StyleSheet.create({
+  container:{
+    borderWidth:1,
+       marginHorizontal:20,
+       padding:20,
+       alignItems:"center", 
+       flexDirection:"row",
+       justifyContent:"center"
+     
+  }
+})
 export default DateComp;

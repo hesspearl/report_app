@@ -24,7 +24,7 @@ const DropDown = props => {
 
   return (
       <View
-      style={{marginVertical:10, marginHorizontal:30}}>
+      style={{...styles.container,...props.style}}>
     <Picker
       selectedValue={selected}
       onValueChange={value => setSelected(value)}
@@ -37,5 +37,11 @@ const DropDown = props => {
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container:{
+    
+    marginVertical:10,
+      
+  }
+});
 export default DropDown;

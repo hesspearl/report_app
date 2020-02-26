@@ -6,18 +6,20 @@ import Color from "../../Styles/Colors"
 
 const InputPage= props =>{
 return (
-    <View style={styles.container}>
+    <View style={{...styles.container,...props.style}}>
     <Reinput 
     label="name"
     onChangeText={props.onChangeText}
     value={props.value}
     onEndEditing={props.onEndEditing}
+    
     {
     ...props
     }
     underlineActiveColor={Color.line}
     style={styles.textInputDesign}
     labelActiveColor={Color.line}
+    
     />
     
    
