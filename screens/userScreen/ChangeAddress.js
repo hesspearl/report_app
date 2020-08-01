@@ -80,9 +80,7 @@ const ChangeAddress = props => {
   );
 };
 
-ChangeAddress.navigationOptions = navData => {
 
-};
 
 styles = StyleSheet.create({
   map: { flex: 1 },

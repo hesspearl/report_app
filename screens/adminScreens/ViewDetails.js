@@ -99,13 +99,13 @@ const ViewDetails = props => {
   );
 };
 
-ViewDetails.navigationOptions = navData => {
+export const ViewDetailsOptions = navData => {
   return {
     headerTitle:"Reports",
     headerStyle: {
       backgroundColor: Colors.subColor
     },
-    headerLeft: (
+    headerLeft:()=> (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item
           title="return"

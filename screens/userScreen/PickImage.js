@@ -82,8 +82,5 @@ const PickImage = props => {
   );
 };
 
-PickImage.navigationOptions = {
-  header: null
-};
 
 export default PickImage;

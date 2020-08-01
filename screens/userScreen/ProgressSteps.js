@@ -95,7 +95,7 @@ renderViewPagerPage = data => {
   );
 };
 
-ProgressSteps.navigationOptions = navData => {
+ export const ProgressStepsOptions = navData => {
   return {
     headerTitle: "Steps",
    headerLeft: (

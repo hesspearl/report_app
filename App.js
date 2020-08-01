@@ -7,7 +7,7 @@ import { reduxFirestore, getFirestore} from "redux-firestore";
 import {ReactReduxFirebaseProvider, getFirebase } from "react-redux-firebase";
 import firebase from "./firebase";
 
-import ButtonsNav from "./navigation/buttonNavigation";
+import MainNav from "./navigation/mainNav";
 import report from "./store/reducers/report";
 import authReducer from "./store/reducers/auth";
 import { useSelector} from "react-redux";
@@ -42,13 +42,12 @@ export default function main() {
 
   console.log(token)
   return (
-    // <MapsNavigation/>
-    <Provider store={store}>
-    <ReactReduxFirebaseProvider
-   {...rrfProps}>
-      <ButtonsNav />
-      </ReactReduxFirebaseProvider>
-    </Provider>
+    // 
+     <Provider store={store}>
+
+    <MainNav/>
+      
+     </Provider>
     //
   );
 }

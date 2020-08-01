@@ -11,7 +11,7 @@ import Colors from "../../Styles/Colors"
 
 const FullMapPreview = props => {
   // const location = props.navigation.getParam('location')
-  const idInfo = props.navigation.getParam("infos");
+  const idInfo = props.route.params.infos
 
   console.log(idInfo)
   const [pickedLocation, setPickedLocation] = useState();
@@ -116,15 +116,6 @@ const FullMapPreview = props => {
   );
 };
 
-FullMapPreview.navigationOptions = navData => {
-    return {
-      headerTitle:"Details",
-      headerStyle: {
-        backgroundColor: Colors.subColor
-      },
-      
-    };
-  };
 
 const styles = StyleSheet.create({
   container: {

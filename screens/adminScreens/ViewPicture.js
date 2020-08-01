@@ -5,7 +5,7 @@ import AddressPreview from "../../components/UI/AddressReview"
 import Colors from "../../Styles/Colors"
 
 const ViewPicture = props => {
-  const info = props.navigation.getParam("info");
+  const info = props.route.param.info
 
   console.log(info)
   return (
@@ -16,15 +16,7 @@ const ViewPicture = props => {
   );
 };
 
-ViewPicture.navigationOptions = navData => {
-    return {
-      headerTitle:"Details",
-      headerStyle: {
-        backgroundColor: Colors.subColor
-      },
-      
-    };
-  };
+
 
 const styles = StyleSheet.create({
   img: {

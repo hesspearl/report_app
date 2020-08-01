@@ -79,8 +79,5 @@ const AdminLog = props => {
   );
 };
 
-AdminLog.navigationOptions = {
-  headerTitle: "Admin Account"
-};
 
 export default AdminLog;

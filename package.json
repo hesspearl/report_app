@@ -11,6 +11,9 @@
     "@expo/vector-icons": "^10.0.6",
     "@react-native-community/datetimepicker": "^2.1.0",
     "@react-native-community/viewpager": "2.0.2",
+    "@react-navigation/material-bottom-tabs": "^5.2.15",
+    "@react-navigation/native": "^5.7.2",
+    "@react-navigation/stack": "^5.8.0",
     "expo": "~36.0.0",
     "expo-image-picker": "^8.0.1",
     "expo-location": "^8.0.0",
@@ -20,7 +23,7 @@
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
-    "react-native-gesture-handler": "^1.5.3",
+    "react-native-gesture-handler": "~1.5.0",
     "react-native-maps": "^0.26.1",
     "react-native-paper": "^3.4.0",
     "react-native-step-indicator": "0.0.11",
@@ -36,7 +39,11 @@
     "redux-thunk": "^2.3.0",
     "reinput-expo": "^3.5.1",
     "rn-bottom-drawer": "^1.4.3",
-    "rn-viewpager": "^1.2.9"
+    "rn-viewpager": "^1.2.9",
+    "react-native-reanimated": "~1.4.0",
+    "react-native-screens": "2.0.0-alpha.12",
+    "react-native-safe-area-context": "0.6.0",
+    "@react-native-community/masked-view": "0.1.5"
   },
   "devDependencies": {
     "babel-preset-expo": "~8.0.0",

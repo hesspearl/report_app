@@ -1,122 +1,144 @@
 import React from "react";
 import { Platform } from "react-native";
 
-import {
-  createAppContainer,
-  createBottomTabNavigator
-} from "react-navigation";
-import {createStackNavigator} from 'react-navigation-stack'
-import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
+import { createAppContainer, createBottomTabNavigator } from "react-navigation";
+import { createStackNavigator } from "@react-navigation/stack";
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-
 import Images from "../screens/userScreen/PickImage";
-import ProgressSteps from "../screens/userScreen/ProgressSteps";
+import ProgressSteps ,{ProgressStepsOptions} from "../screens/userScreen/ProgressSteps";
 import MapScreen from "../screens/userScreen/MapScreen";
-import changeAddressMap from "../screens/userScreen/ChangeAddress"
-import LoadingScreen from "../screens/userScreen/LoadingScreen"
+import changeAddressMap from "../screens/userScreen/ChangeAddress";
+import LoadingScreen from "../screens/userScreen/LoadingScreen";
 
 import Login from "../screens/loggingScreen/login";
-import SingUp from '../screens/loggingScreen/signup'
+import SingUp from "../screens/loggingScreen/signup";
 import AdminLogIn from "../screens/loggingScreen/AdminLog";
 
-import viewMap from "../screens/adminScreens/FullMapView"
-import ViewDetails from "../screens/adminScreens/ViewDetails";
-import ViewPicture from "../screens/adminScreens/ViewPicture"
-
+import viewMap from "../screens/adminScreens/FullMapView";
+import ViewDetails , {ViewDetailsOptions} from "../screens/adminScreens/ViewDetails";
+import ViewPicture from "../screens/adminScreens/ViewPicture";
 
 import Colors from "../Styles/Colors";
 
+const StackMain = createStackNavigator();
 
-
-
-const appNavigation = createStackNavigator(
-  {
-  
-    
-    SingUp:SingUp,
-    view: ViewDetails,
-    
-    MapScreen:MapScreen,
-    PickImage: Images,
-    Load:LoadingScreen,
-    ProgressSteps: ProgressSteps,
-    viewMap:viewMap,
-    changeAddress:changeAddressMap,
-    ViewPicture:ViewPicture
-  },
-  {
-    defaultNavigationOptions: {
+const ScreensNav = () => {
+  return (
+    <StackMain.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: Colors.mainColor,
+        },
+        headerTintColor: "white",
+      }}
+    >
+      <StackMain.Screen
+        component={SingUp}
+        name="SingUp"
+        options={{header:null}}
+      ></StackMain.Screen>
+      <StackMain.Screen
+        component={ViewDetails}
+        name="view"
+        options={ViewDetailsOptions}
+      ></StackMain.Screen>
+      <StackMain.Screen
+        component={MapScreen}
+        name=" MapScreen"
+        options={   {header:null}}
+      ></StackMain.Screen>
+      <StackMain.Screen
+        component={Images}
+        name=" PickImage"
+        options={{header: null}}
+      ></StackMain.Screen>
+      <StackMain.Screen
+        component={LoadingScreen}
+        name=" Load"
+     
+      ></StackMain.Screen>
+      <StackMain.Screen
+        component={ProgressSteps}
+        name=" ProgressSteps"
+        options={ProgressStepsOptions}
+      ></StackMain.Screen>
+      <StackMain.Screen
+        component={viewMap}
+        name="viewMap"
+        options={{
+          headerTitle:"Details",
       headerStyle: {
-        backgroundColor: Colors.mainColor
+        backgroundColor: Colors.subColor
+      }
+        }}
+      ></StackMain.Screen>
+      <StackMain.Screen
+        component={changeAddressMap}
+        name=" changeAddress"
+     
+      ></StackMain.Screen>
+      <StackMain.Screen
+        component={ViewPicture}
+        name=" ViewPicture"
+        options={{
+      headerTitle:"Details",
+      headerStyle: {
+        backgroundColor: Colors.subColor
       },
-      headerTintColor: "white",
-     
-    },
-     
-  }
-);
+      
+    }}
+      ></StackMain.Screen>
+    </StackMain.Navigator>
+  );
+};
 
+const Tab = createMaterialBottomTabNavigator();
 
+export default tabScreen=()=>{
 
-const tabScreenConfig={
-    user: {
-      screen: Login,
-      navigationOptions: {
-        tabBarIcon: tabInfo => {
-          return (
-            <MaterialCommunityIcons
-              name="account-box"
-              color={tabInfo.tintColor}
-              size={25}
-            />
-          );
-        },
-        tabBarColor:Colors.mainColor,
-        
-      }
-    },
-mainScreen:{
-     screen:appNavigation,
-  navigationOptions:{
-    tabBarVisible:false,
-    tabBarColor:"white",
-    title:"",
-  }},
-
-    Admin: {
-      screen: AdminLogIn,
-      navigationOptions: {
-        tabBarIcon: tabInfo => {
-          return (
-            <MaterialCommunityIcons
-              name="account-key"
-              color={tabInfo.tintColor}
-              size={25}
-            />
-          );
-        },
-        tabBarColor:Colors.subColor
-      }
+  return(
+    <Tab.Navigator
+    shifting={true}>
+<Tab.Screen  name="Login" component={Login} options={{
+      tabBarIcon: (tabInfo) => {
+        return (
+          <MaterialCommunityIcons
+            name="account-box"
+            color={tabInfo.tintColor}
+            size={25}
+          />
+        );
+      },
+      tabBarColor: Colors.mainColor,
+    }} />
+    <Tab.Screen name="screensNav" component={ScreensNav}
+      options={ {
+      tabBarVisible: false,
+      tabBarColor: "white",
+      title: "",
+    }}
+    />
+<Tab.Screen name="Admin" component={AdminLogIn}
+  options={
+    {
+      tabBarIcon: (tabInfo) => {
+        return (
+          <MaterialCommunityIcons
+            name="account-key"
+            color={tabInfo.tintColor}
+            size={25}
+          />
+        );
+      },
+      tabBarColor: Colors.subColor,
+      
+      headerTitle: "Admin Account"
     }
   }
+/>
 
-
-
-const LogInNavigator =
-  Platform.OS === "android"
-    ? createMaterialBottomTabNavigator(tabScreenConfig,{
-     shifting:true
-    })
-    : createBottomTabNavigator(
-      tabScreenConfig,
-        {
-          tabBarOptions: {
-            activeTintColor: Colors.mainColor
-          }
-        }
-      );
-
-
-
-export default createAppContainer(LogInNavigator);
+    </Tab.Navigator>
+  )
+}

@@ -89,11 +89,7 @@ const signup = (props) => {
     </LogLayout>
   );
 };
-signup.navigationOptions = {
-header:null
 
-  
-};
 
 const styles= StyleSheet.create({
 
