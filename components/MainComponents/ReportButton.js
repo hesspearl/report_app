@@ -29,12 +29,10 @@ useEffect(() => {
         userName,
         props.report.report,
         props.report.newLocation.location,
-        props.report.pageOne.info1,
-        props.report.pageOne.info2,
-        props.report.pageOne.info3,
-        props.report.pageOne.info4,
-        props.report.pageTwo.info5,
-        props.report.pageTwo.info6
+        props.report.pageOne.name,
+        props.report.pageOne.place,
+        props.report.pageOne.date,
+        
       );
     } catch (err) {
       console.log( err)

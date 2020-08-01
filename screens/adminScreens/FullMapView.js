@@ -13,6 +13,7 @@ const FullMapPreview = props => {
   // const location = props.navigation.getParam('location')
   const idInfo = props.navigation.getParam("infos");
 
+  console.log(idInfo)
   const [pickedLocation, setPickedLocation] = useState();
   console.log(pickedLocation)
   
@@ -89,7 +90,7 @@ const FullMapPreview = props => {
 <Callout
  onPress={()=>{props.navigation.navigate("ViewPicture",{info:idInfo})}}>
          
-    <Text> tab to view picrute </Text>
+    <Text> tab to view picture </Text>
   </Callout>
           
          

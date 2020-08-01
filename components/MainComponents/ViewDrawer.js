@@ -2,6 +2,7 @@ import React from "react";
 import {
   View,
   StyleSheet,
+  Text
 } from "react-native";
 import BottomDrawer from "rn-bottom-drawer"
 
@@ -19,18 +20,11 @@ const ViewDrawer = props => {
   renderContent=()=>{
     return(
       <View style={styles.text}>
-      <TextComp
-      style={{
-        fontSize:20,
-       margin:10,
-       color:Color.subColor }}>
-      user Name:{props.idInfo.userName}</TextComp>
-      <TextComp>info1:{props.idInfo.info1}</TextComp>
-      <TextComp>info2:{props.idInfo.info2}</TextComp>
-      <TextComp>info3:{props.idInfo.info3}</TextComp>
-      <TextComp>info4:{props.idInfo.info4}</TextComp>
-      <TextComp>info5:{props.idInfo.info5}</TextComp>
-      <TextComp>info6:{props.idInfo.info6}</TextComp>
+    <TextComp
+      style={styles.user}>{props.idInfo.name}</TextComp>
+      <TextComp>place:{props.idInfo.place}</TextComp>
+      <TextComp>date:{props.idInfo.date}</TextComp>
+      
 </View>
     )
   }
@@ -58,6 +52,13 @@ return (
 };
 
 const styles = StyleSheet.create({
+
+  user:{
+    fontSize:20,
+   margin:10,
+   color:Color.subColor,
+   },
+
   text: {
     margin:10,
    

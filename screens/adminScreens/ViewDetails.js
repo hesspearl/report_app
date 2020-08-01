@@ -31,18 +31,16 @@ const ViewDetails = props => {
 
     await ref.then(snapShot =>
       snapShot.docs.forEach(data => {
-        console.log(data.data().userName);
+        console.log(data.data().name);
         docData.push({
           reportId: data.id,
           userName: data.data().userName,
           location: data.data().location,
           image: data.data().Image,
-          info1: data.data().info1,
-          info2: data.data().info2,
-          info3: data.data().info3,
-          info4: data.data().info4,
-          info5: data.data().info5,
-          info6: data.data().info6
+          name: data.data().name,
+          place: data.data().place,
+          date: data.data().date,
+         
         });
 
         return setData(docData);
@@ -84,8 +82,8 @@ const ViewDetails = props => {
               >
                 <Card
                   image={itemData.item.image}
-                  userName={itemData.item.userName}
-                  reportId={itemData.item.reportId}
+                  name={itemData.item.name}
+                        place={itemData.item.place}
                 />
               </TouchableOpacity>
             )}

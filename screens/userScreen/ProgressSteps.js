@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef , useEffect } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { useSelector } from "react-redux";
 
@@ -18,6 +18,8 @@ import firstIndicatorStyles from "../../Styles/StepsIndicatorColors";
 const PAGES = ["Page 1", "Page 2", "Page 3", "Page 4"];
 
 const ProgressSteps = props => {
+
+  
   const [currentPage, setCurrentPage] = useState(0);
 
   const newReportInfo = useSelector(state => state.report);
@@ -96,6 +98,16 @@ renderViewPagerPage = data => {
 ProgressSteps.navigationOptions = navData => {
   return {
     headerTitle: "Steps",
+   headerLeft: (
+      <HeaderButtons HeaderButtonComponent={HeaderButton}>
+        <Item
+          title="return"
+          iconName={"back"}
+          onPress={() => {
+            navData.navigation.navigate("MapScreen");
+          }}
+        />
+      </HeaderButtons>),
     headerRight: (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item
@@ -129,7 +141,7 @@ const styles = StyleSheet.create({
 
    // marginHorizontal: 10,
     borderBottomWidth: 1.5,
-    paddingBottom: 50
+    paddingBottom: "5%"
   },
   stepLabel: {
     fontSize: 12,
@@ -151,10 +163,12 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flexDirection: "row",
+    justifyContent:"space-evenly",
    alignContent:"center",
+   width:"100%",
     //alignItems: "baseline",
-   marginBottom: 20,
-  marginRight:20
+   marginBottom: "5%",
+//  marginRight:"5%"
   }
 });
 

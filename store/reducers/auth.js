@@ -4,7 +4,8 @@ const initialState={
     email: null ,
     userId:null,
     password:null,
-    name:null
+    name:null,
+    token:null
 }
 
 export default( state = initialState , action)=>{
@@ -14,7 +15,8 @@ export default( state = initialState , action)=>{
             return{
                 email :action.email,
                 userId:action.userId,
-                name:action.name
+                name:action.name,
+                token:action.token
             }
 
             case SIGNUP:return{

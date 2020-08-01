@@ -14,6 +14,7 @@ import Images from "../screens/userScreen/PickImage";
 import ProgressSteps from "../screens/userScreen/ProgressSteps";
 import MapScreen from "../screens/userScreen/MapScreen";
 import changeAddressMap from "../screens/userScreen/ChangeAddress"
+import LoadingScreen from "../screens/userScreen/LoadingScreen"
 
 import Login from "../screens/loggingScreen/login";
 import SingUp from '../screens/loggingScreen/signup'
@@ -28,14 +29,18 @@ import Colors from "../Styles/Colors";
 
 
 
+
 const appNavigation = createStackNavigator(
   {
   
-    PickImage: Images,
+    
     SingUp:SingUp,
     view: ViewDetails,
-    ProgressSteps: ProgressSteps,
+    
     MapScreen:MapScreen,
+    PickImage: Images,
+    Load:LoadingScreen,
+    ProgressSteps: ProgressSteps,
     viewMap:viewMap,
     changeAddress:changeAddressMap,
     ViewPicture:ViewPicture

@@ -48,20 +48,18 @@ const PageOneReducer = (state, action) => {
 const Inputs = () => {
   const dispatch = useDispatch();
   const userName = useSelector(state => state.auth.name);
-  
-  console.log(userName)
+
 
   const [stateReport, dispatchReport] = useReducer(PageOneReducer, {
     inputValues: {
       enteredInfoOneInput: "Daniel da Conceição Nascimento",
       enteredInfoTwoInput: "",
       enteredInfoThreeInput: "",
-      enteredInfoFourInput: ""
+     
     },
     
   });
 
-  console.log(stateReport);
 /*
   const inputTextHolder = (inputIdentifier, enteredText) => {
     let isValid = false;
@@ -83,7 +81,7 @@ const Inputs = () => {
           stateReport.inputValues.enteredInfoOneInput,
           stateReport.inputValues.enteredInfoTwoInput,
           stateReport.inputValues.enteredInfoThreeInput,
-          stateReport.inputValues.enteredInfoFourInput
+         
         )
       );
     
@@ -108,12 +106,12 @@ const Inputs = () => {
             //  returnKeyType="next"
             />
          
-            {!stateReport.Validities.enteredInfoOneInput}
+          
             <DropDown
              onChangeText={enteredText => dispatchReport({
                   type: REPORT_UPDATE,
                   value: enteredText,
-                  input: "enteredInfoThreeInput"
+                  input: "enteredInfoTwoInput"
                 })
               }
               style={style.inputContainer}
@@ -122,18 +120,14 @@ const Inputs = () => {
               onChangeText={enteredText => dispatchReport({
                   type: REPORT_UPDATE,
                   value: enteredText,
-                  input: "enteredInfoTwoInput"
+                  input: "enteredInfoThreeInput"
                 })
               }
               
               //value={stateReport.inputValues.enteredInfoTwoInput}
             />
 
-            {!stateReport.Validities.enteredInfoTwoInput}
-           
-            {!stateReport.Validities.enteredInfoThreeInput}
-
-            {!stateReport.Validities.enteredInfoFourInput}
+          
           </View>
       
       </ScrollView>

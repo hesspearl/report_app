@@ -14,12 +14,12 @@ export const infoImage = image=>{
 export const infoLocation = (location)=>{
     return{type :CREATE_REPORT_LOCATION ,data :{location}}
 }
-export const infoPageOne = (info1 , info2 ,info3 , info4)=>{
+export const infoPageOne = (name , place ,date )=>{
     return{type :CREATE_REPORT_PAGE_ONE ,data : {
-        info1,
-        info2,
-        info3,
-        info4
+        name,
+        place,
+        date
+       
     }}
 }
 export const infoPageTwo = (info5,info6)=>{

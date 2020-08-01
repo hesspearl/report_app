@@ -10,7 +10,7 @@ import firebase from "./firebase";
 import ButtonsNav from "./navigation/buttonNavigation";
 import report from "./store/reducers/report";
 import authReducer from "./store/reducers/auth";
-
+import { useSelector} from "react-redux";
 //reducer we are storing
 const rootReducer = combineReducers({
   report: report,
@@ -37,6 +37,10 @@ const rrfProps = {
   dispatch: store.dispatch,
 }
 export default function main() {
+
+  const token=useSelector(state=>state.auth.token)
+
+  console.log(token)
   return (
     // <MapsNavigation/>
     <Provider store={store}>

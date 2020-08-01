@@ -1,19 +1,19 @@
 import React, { useState, useCallback, useEffect } from "react";
-import {  View, StyleSheet, Alert } from "react-native";
-import MapView, { Marker } from "react-native-maps";
+import {  View, StyleSheet, Alert , Text} from "react-native";
+import MapView, { Marker ,Callout } from "react-native-maps";
 import * as Location from "expo-location";
 import * as permissions from "expo-permissions";
 import { useDispatch } from "react-redux";
 
 import * as reportActions from "../../store/action/report";
-import PickImage from "../userScreen/PickImage";
+
 import useBackButton from "../../hooks/useBackButton";
 import Description from "../../components/UI/Description";
 import ButtonStyle from "../../components/UI/ButtonStyle"
 
 
 const MapScreen = props => {
-
+  
     
   const [selectedLocation, setSelectedLocation] = useState(pickedLocation);
   const [pickedLocation, setPickedLocation] = useState();
@@ -109,10 +109,21 @@ const MapScreen = props => {
     };
   }
 
+  const pressHandler=()=>props.navigation.navigate("PickImage")
+ 
+
+
   return (
     <View style={styles.contain}>
    
-    
+    <View style={styles.btnContain}>
+   <ButtonStyle
+      iconName="exit-to-app"
+      color="black"
+      style={styles.btn}
+      onSelect={()=>props.navigation.navigate("user")}
+    />
+    </View>
       <MapView
         style={styles.map}
         region={mapRegin}
@@ -127,22 +138,22 @@ const MapScreen = props => {
             description="tab"
             showCallout
           >
-            <PickImage navigation={props.navigation} />
+          <Callout 
+          onPress={pressHandler}>
+      <Text> Make near miss report</Text>
+    </Callout>
+            
+           
+          
           </Marker>
         )}
       </MapView>
     
     
-  
-      <Description >
+  <View style={styles.description}>
+      <Description />
 
-      <ButtonStyle
-      iconName="exit-to-app"
-      color="black"
-      style={styles.btn}
-      onSelect={()=>props.navigation.navigate("user")}
-    />
-      </Description>
+      </View>
  
       
     </View>
@@ -157,7 +168,7 @@ const styles = StyleSheet.create({
   contain: {
     ...StyleSheet.absoluteFillObject,
     justifyContent: "flex-end",
-    alignItems: "center",
+   // alignItems: "center",
     flex:1
   },
   map: {
@@ -179,6 +190,17 @@ const styles = StyleSheet.create({
   container:{
     width:"100%",
     padding:5,
+  },
+  btnContain:{
+    justifyContent:"flex-start",
+    margin:15,
+   flex:1
+  },
+  description:{
+    margin:15,
+    justifyContent:"center",
+    alignItems:"center",
+    width:"100%"
   }
 
 });

@@ -18,8 +18,8 @@ return (
 
 const styles= StyleSheet.create({
     button: {
-        width: 350,
-        margin: 10
+        width: "90%",
+        margin: 5
       },
       btnStyle: {
         backgroundColor: Colors.mainColor,

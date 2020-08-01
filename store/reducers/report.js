@@ -36,10 +36,10 @@ import {
   
       case CREATE_REPORT_PAGE_ONE:
         const pageOne = new ReportPagOne(
-          action.data.info1,
-          action.data.info2,
-          action.data.info3,
-          action.data.info4
+          action.data.name,
+          action.data.place,
+          action.data.date,
+          
         );
   
         return {
@@ -62,9 +62,9 @@ import {
           new Date().toString(),
           action.data.report,
           action.data.location,
-          action.data.pageOne.info1,
-          action.data.pageOne.info2,
-          action.data.pageOne.info3,
+          action.data.pageOne.name,
+          action.data.pageOne.place,
+          action.data.pageOne.date,
           action.data.pageOne.info4,
           action.data.pageTwo.info5,
           action.data.pageTwo.info6

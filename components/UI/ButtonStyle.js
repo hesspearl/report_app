@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
       shadowOffset: { width: 0, height: 3 },
       shadowRadius: 8,
       elevation:8,
-         position: "absolute",
+         position: "relative",
      //    margin: 16,
          right: 0,
          bottom: 0,
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   },
   btnContain: {
   //  margin: 10,
-    width: "40%",
+    width: "16%",
   
   }
 });
