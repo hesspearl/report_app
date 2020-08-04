@@ -67,12 +67,12 @@ const styles = StyleSheet.create({
   },
   title: {
 
-    fontSize: 12,
+    fontSize: 20,
     marginVertical: 2
   },
   report: {
 
-    fontSize: 12,
+    fontSize: 20,
     color: '#888'
   },
 

@@ -56,6 +56,7 @@ const styles=StyleSheet.create({
   container:{
     borderWidth:1,
        marginHorizontal:20,
+       marginVertical:10,
        padding:20,
        alignItems:"center", 
        flexDirection:"row",

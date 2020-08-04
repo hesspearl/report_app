@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from "react";
-import { View, StyleSheet, Alert, Text } from "react-native";
+import { View, StyleSheet, Alert, Text , TouchableOpacity} from "react-native";
 import MapView, { Marker, Callout } from "react-native-maps";
 import * as Location from "expo-location";
 import * as permissions from "expo-permissions";
@@ -107,14 +107,7 @@ const MapScreen = (props) => {
 
   return (
     <View style={styles.contain}>
-      <View style={styles.btnContain}>
-        <ButtonStyle
-          iconName="exit-to-app"
-          color="black"
-          style={styles.btn}
-          onSelect={() => props.navigation.navigate("user")}
-        />
-      </View>
+     
       <MapView
         style={styles.map}
         region={mapRegin}
@@ -128,13 +121,22 @@ const MapScreen = (props) => {
             description="tab"
             showCallout
           >
-            <Callout onPress={pressHandler}>
-              <Text> Make near miss report</Text>
+            <Callout onPress={pressHandler}
+            >
+              <Text style={{fontSize:20}}> Make near miss report</Text>
             </Callout>
           </Marker>
         )}
       </MapView>
-
+      <View style={styles.btnContain}>
+        <ButtonStyle
+          iconName="exit-to-app"
+          color="black"
+          style={styles.btn}
+           onSelect={()=>props.navigation.navigate("TabNav", {screen:"Login"})}
+           //
+        />
+      </View>
       <View style={styles.description}>
         <Description />
       </View>

@@ -90,7 +90,7 @@ const FullMapPreview = props => {
 <Callout
  onPress={()=>{props.navigation.navigate("ViewPicture",{info:idInfo})}}>
          
-    <Text> tab to view picture </Text>
+    <Text style={{fontSize:20}}> tab to view picture </Text>
   </Callout>
           
          

@@ -7,7 +7,7 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Images from "../screens/userScreen/PickImage";
-import ProgressSteps ,{ProgressStepsOptions} from "../screens/userScreen/ProgressSteps";
+import ProgressSteps ,{screenOptions as ProgressStepsOptions} from "../screens/userScreen/ProgressSteps";
 import MapScreen from "../screens/userScreen/MapScreen";
 import changeAddressMap from "../screens/userScreen/ChangeAddress";
 import LoadingScreen from "../screens/userScreen/LoadingScreen";
@@ -24,7 +24,7 @@ import Colors from "../Styles/Colors";
 
 const StackMain = createStackNavigator();
 
-const ScreensNav = () => {
+export const ScreensNav = () => {
   return (
     <StackMain.Navigator
       screenOptions={{
@@ -34,10 +34,15 @@ const ScreensNav = () => {
         headerTintColor: "white",
       }}
     >
+        <StackMain.Screen
+        component={TabScreen}
+        name="TabNav"
+        options={{header:()=>null}}
+      ></StackMain.Screen>
       <StackMain.Screen
         component={SingUp}
         name="SingUp"
-        options={{header:null}}
+        options={{header:()=>null}}
       ></StackMain.Screen>
       <StackMain.Screen
         component={ViewDetails}
@@ -46,22 +51,22 @@ const ScreensNav = () => {
       ></StackMain.Screen>
       <StackMain.Screen
         component={MapScreen}
-        name=" MapScreen"
-        options={   {header:null}}
+        name="MapScreen"
+        options={   {header:()=>null}}
       ></StackMain.Screen>
       <StackMain.Screen
         component={Images}
-        name=" PickImage"
-        options={{header: null}}
+        name="PickImage"
+        options={{header:()=>null}}
       ></StackMain.Screen>
       <StackMain.Screen
         component={LoadingScreen}
-        name=" Load"
+        name="Load"
      
       ></StackMain.Screen>
       <StackMain.Screen
         component={ProgressSteps}
-        name=" ProgressSteps"
+        name="ProgressSteps"
         options={ProgressStepsOptions}
       ></StackMain.Screen>
       <StackMain.Screen
@@ -76,12 +81,12 @@ const ScreensNav = () => {
       ></StackMain.Screen>
       <StackMain.Screen
         component={changeAddressMap}
-        name=" changeAddress"
+        name="changeAddress"
      
       ></StackMain.Screen>
       <StackMain.Screen
         component={ViewPicture}
-        name=" ViewPicture"
+        name="ViewPicture"
         options={{
       headerTitle:"Details",
       headerStyle: {
@@ -96,7 +101,7 @@ const ScreensNav = () => {
 
 const Tab = createMaterialBottomTabNavigator();
 
-export default tabScreen=()=>{
+export const TabScreen=()=>{
 
   return(
     <Tab.Navigator
@@ -113,13 +118,7 @@ export default tabScreen=()=>{
       },
       tabBarColor: Colors.mainColor,
     }} />
-    <Tab.Screen name="screensNav" component={ScreensNav}
-      options={ {
-      tabBarVisible: false,
-      tabBarColor: "white",
-      title: "",
-    }}
-    />
+   
 <Tab.Screen name="Admin" component={AdminLogIn}
   options={
     {

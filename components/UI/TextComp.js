@@ -9,7 +9,7 @@ const TextComp = props => {
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 15,
+    fontSize: 20,
     padding: 10,
     fontWeight: "bold"
   }

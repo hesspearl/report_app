@@ -46,7 +46,7 @@ const login = props => {
       )}
       <LogButtons onPress={() => props.navigation.navigate("SingUp")}>
         SIGN UP{" "}
-      </LogButtons>
+      </LogButtons> 
     </LogLayout>
   );
 };

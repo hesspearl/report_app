@@ -95,10 +95,10 @@ renderViewPagerPage = data => {
   );
 };
 
- export const ProgressStepsOptions = navData => {
+ export const screenOptions  = navData => {
   return {
     headerTitle: "Steps",
-   headerLeft: (
+   headerLeft:()=> (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item
           title="return"
@@ -108,7 +108,7 @@ renderViewPagerPage = data => {
           }}
         />
       </HeaderButtons>),
-    headerRight: (
+    headerRight:()=>  (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item
           title="Delete"

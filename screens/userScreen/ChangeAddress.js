@@ -72,7 +72,7 @@ const ChangeAddress = props => {
           description="tab"
         >
           <Callout onPress={saveHandler}>
-            <Text> Pick new address</Text>
+            <Text style={{fontSize:20}}> Pick new address</Text>
           </Callout>
         </Marker>
       )}

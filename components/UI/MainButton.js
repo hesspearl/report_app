@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 8,
     elevation: 8,
+    marginVertical:20
   },
     btnContainer: {
     backgroundColor: "#F85C50",
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
   },
   btn: {
     fontWeight:'bold',
-    fontSize: 20,
+    fontSize: 30,
     color: "white"
   }
 });

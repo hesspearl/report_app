@@ -38,9 +38,8 @@ const rrfProps = {
 }
 export default function main() {
 
-  const token=useSelector(state=>state.auth.token)
+  
 
-  console.log(token)
   return (
     // 
      <Provider store={store}>

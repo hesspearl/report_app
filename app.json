@@ -3,7 +3,7 @@
     "name": "Near Miss",
     "slug": "near-miss",
     "privacy": "public",
-    "sdkVersion": "36.0.0",
+    "sdkVersion": "38.0.0",
     "platforms": [
       "ios",
       "android",

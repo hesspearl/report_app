@@ -5,12 +5,12 @@ import AddressPreview from "../../components/UI/AddressReview"
 import Colors from "../../Styles/Colors"
 
 const ViewPicture = props => {
-  const info = props.route.param.info
+  const info = props.route.params.info
 
   console.log(info)
   return (
     <View>
-      <Image source={{uri: info.image}} style={styles.img} />
+      <Image source={{uri:info.image}} style={styles.img} />
       <AddressPreview location={info.location}/>
     </View>
   );

@@ -1,5 +1,6 @@
+import React from "react"
 import { NavigationContainer } from '@react-navigation/native';
-import {TabScreen } from "./buttonNavigation"
+import {ScreensNav}  from "./buttonNavigation"
 
 
 export default  mainNav=()=>{
@@ -7,7 +8,7 @@ export default  mainNav=()=>{
     return(
         <NavigationContainer>
 
-<TabScreen/>
+<ScreensNav/>
         </NavigationContainer>
     )
 }

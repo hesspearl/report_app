@@ -7,7 +7,7 @@ return (
  
     <View style={styles.buttonContainer}>
     <View style={styles.bubble}>
-      <Text>Tap on marker to make report</Text>
+      <Text style={{fontSize:20}}>Tap on the marker to make report</Text>
     </View>
   </View>
  

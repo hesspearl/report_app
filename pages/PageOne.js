@@ -89,12 +89,12 @@ const Inputs = () => {
 
   return (
     <KeyboardAvoidingView
-      style={{ flex: 1 }}
+      style={{ flex: 1  }}
       behavior="padding"
       keyboardVerticalOffset={100}
     >
       <ScrollView>
-        <View>
+        <View style={{marginTop:50}}>
        
           
             <InputPage
@@ -150,7 +150,7 @@ const style = StyleSheet.create({
     borderColor: "black",
     marginTop: 7,
     padding: 10,
-    fontSize: 15
+    fontSize:20
   }
 });
 

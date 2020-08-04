@@ -1,6 +1,6 @@
 export default firstIndicatorStyles = {
-        stepIndicatorSize: 30,
-        currentStepIndicatorSize: 40,
+        stepIndicatorSize: 40,
+        currentStepIndicatorSize: 45,
         separatorStrokeWidth: 3,
         currentStepStrokeWidth: 5,
         separatorFinishedColor: "#4aae4f",
@@ -8,13 +8,13 @@ export default firstIndicatorStyles = {
         stepIndicatorFinishedColor: "#4aae4f",
         stepIndicatorUnFinishedColor: "#a4d4a5",
         stepIndicatorCurrentColor: "#ffffff",
-        stepIndicatorLabelFontSize: 15,
-        currentStepIndicatorLabelFontSize: 15,
+        stepIndicatorLabelFontSize: 20,
+        currentStepIndicatorLabelFontSize: 20,
         stepIndicatorLabelCurrentColor: "#000000",
         stepIndicatorLabelFinishedColor: "#ffffff",
         stepIndicatorLabelUnFinishedColor: "rgba(255,255,255,0.5)",
         labelColor: "#666666",
-        labelSize: 12,
+        labelSize: 20,
         currentStepLabelColor: "#4aae4f",
        
       };

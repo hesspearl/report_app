@@ -1,22 +1,28 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, KeyboardAvoidingView, ScrollView} from 'react-native';
 
 import Colors from '../../Styles/Colors';
 
 const LogLayout= props =>{
 return (
-<View style={{...styles.logStyle,...props.style}}>
+  <KeyboardAvoidingView
+
+ style={{...styles.logStyle,...props.style}}
+  >
+  <ScrollView>
+<View style={{alignItems: "center",}}>
 
 <Text style={styles.Title}>{props.title} </Text>
     {props.children}
 </View>
-)
+</ScrollView>
+</KeyboardAvoidingView>)
 }
 
 const styles= StyleSheet.create({
     logStyle: {
       backgroundColor:Colors.backgroundLayout,
-        alignItems: "center",
+        
         marginTop: 30,
         marginBottom: 10,
         marginHorizontal:10,
@@ -31,10 +37,13 @@ const styles= StyleSheet.create({
         shadowOpacity: 0.26,
         shadowOffset: { width: 0, height: 2 },
         shadowRadius: 8,
-        elevation: 8
+        elevation: 8,
+        
+        
       },
       Title: {
-        fontSize: 24,
+        marginBottom:20,
+        fontSize: 35,
         fontWeight: "bold"
       },
 })

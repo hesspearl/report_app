@@ -63,11 +63,11 @@ const ViewDetails = props => {
 
   useEffect(() => {
   if(idInfo){
-    props.navigation.navigate("viewMap", { infos: idInfo })
+    props.navigation.navigate("viewMap", {infos: idInfo})
   }
   }, [idInfo])
   
-
+console.log(idInfo)
  
   return (
  

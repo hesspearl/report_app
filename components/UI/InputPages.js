@@ -31,11 +31,13 @@ const styles= StyleSheet.create({
 
     textInputDesign:{
         width: 300,
+        fontSize:20
       
     },
     container:{
        
-        alignItems:"center"
+        alignItems:"center",
+        margin:10
     }
 })
 export default InputPage;

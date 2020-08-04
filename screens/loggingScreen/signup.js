@@ -44,7 +44,7 @@ const signup = (props) => {
             inputs.password,
             name
          ));
-      props.navigation.navigate("MapScreen");
+      props.navigation.navigate( "MapScreen");
     } catch (err) {
       setError(err.message);
       setIsLoading(false);
@@ -78,7 +78,7 @@ const signup = (props) => {
         <LogButtons onPress={signupHandler}>LOG IN</LogButtons>
       )}
       <TouchableOpacity
-      onPress={()=>props.navigation.navigate("user")}>
+      onPress={()=>props.navigation.navigate("TabNav", { screen :"Login"})}>
       <View style={styles.contain}>  
        <Text
        style = {styles.text}> return</Text>
@@ -96,13 +96,15 @@ const styles= StyleSheet.create({
   contain:{
     justifyContent:'flex-end',
     alignItems:'center',
-    marginTop:10
+    marginVertical:20,
+
   },
 
   text:{
     color:Colors.mainColor,
-    fontSize:20,
+    fontSize:30,
     fontWeight:"bold"
+   
 
   },
   input: {
