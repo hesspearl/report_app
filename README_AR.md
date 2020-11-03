@@ -4,7 +4,7 @@
 
 ![react native](https://img.shields.io/badge/react%20native-sdk--38.0.2-blue?style=plastic&logo=data:https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png)
 
-## Features
+## المميزات
 * التقاط صورة وتحرير بلاغ
 * تحديد موقع المستخدم بالخارطة
 * يحوي على واجهة المشرف (للقراءة فقط)
