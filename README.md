@@ -1,4 +1,7 @@
 # Report application 
+
+✍️ [بالعربي](https://github.com/hesspearl/report_app/blob/master/README_AR.md)👈
+
 app for making report about accident with react native and firestore 
 <br />
 
